@@ -425,6 +425,10 @@ main {
   margin-bottom: 0.55rem;
 }
 
+.lf-join-box .lf-btn {
+  margin-top: 1rem;
+}
+
 .lf-member-grid {
   margin-top: 0.7rem;
   display: grid;
