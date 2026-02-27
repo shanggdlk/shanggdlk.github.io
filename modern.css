@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
-  --lf-bg: #f5f6f7;
+  --lf-bg: #f7f8f5;
   --lf-surface: #ffffff;
-  --lf-ink: #18222f;
-  --lf-muted: #4e5f70;
-  --lf-line: #d7dde5;
-  --lf-primary: #183153;
-  --lf-accent: #1f8f88;
-  --lf-primary-soft: #e7edf5;
+  --lf-ink: #10221e;
+  --lf-muted: #3f5650;
+  --lf-line: #d9e3df;
+  --lf-primary: #173f35;
+  --lf-accent: #245f51;
+  --lf-primary-soft: #e7f0ed;
 }
 
 html,
 body {
-  background: radial-gradient(circle at top right, #e8eef6 0%, #f5f6f7 45%, #f7f8f9 100%);
+  background: radial-gradient(circle at top right, #ecf2ef 0%, #f7f8f5 45%, #fafbf9 100%);
   color: var(--lf-ink);
   font-family: 'Manrope', sans-serif;
   scroll-behavior: smooth;
@@ -34,27 +34,42 @@ a:focus {
 }
 
 .lf-navbar {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.97) !important;
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(24, 49, 83, 0.12);
+  border-bottom: 1px solid rgba(23, 63, 53, 0.15);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08) !important;
   padding: 0.5rem 0;
 }
 
+.lf-navbar.navbar-light .navbar-brand,
 .lf-navbar .navbar-brand {
   font-family: 'Fraunces', serif;
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--lf-ink);
+  color: #123229 !important;
 }
 
+.lf-navbar.navbar-light .navbar-nav > .nav-item > .nav-link,
+.lf-navbar.navbar-light .navbar-nav > .nav-item > .nav-link:focus,
 .lf-navbar .nav-link {
-  color: var(--lf-muted) !important;
+  color: #2e4b43 !important;
   font-weight: 600;
   margin-right: 0.2rem;
+  border-radius: 999px;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  line-height: 1.2 !important;
 }
 
+.lf-navbar.navbar-light .navbar-nav > .nav-item > .nav-link:hover,
 .lf-navbar .nav-link:hover {
-  color: var(--lf-primary) !important;
+  color: #123229 !important;
+  background: #edf4f1;
+}
+
+.lf-navbar.navbar-light .navbar-toggler,
+.lf-navbar .navbar-toggler {
+  color: #173f35 !important;
 }
 
 main {
@@ -87,6 +102,15 @@ main {
   max-width: 700px;
   font-size: 1.07rem;
   line-height: 1.75;
+  color: var(--lf-muted);
+}
+
+.lf-hero-note {
+  max-width: 700px;
+  margin-top: 0.45rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--lf-muted);
 }
 
@@ -218,6 +242,7 @@ main {
   background: var(--lf-surface);
   border: 1px solid var(--lf-line);
   border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
 }
 
 .lf-card,
@@ -242,6 +267,27 @@ main {
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 0.35rem;
+}
+
+.lf-system-list {
+  margin: 0.15rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.lf-system-list li {
+  margin-bottom: 0.36rem;
+  color: var(--lf-muted);
+  line-height: 1.45;
+}
+
+.lf-system-list a {
+  font-weight: 700;
+  color: var(--lf-primary);
+}
+
+.lf-system-list span {
+  color: #5f766f;
+  font-size: 0.88rem;
 }
 
 .lf-muted {
