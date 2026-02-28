@@ -2,7 +2,7 @@
 
 :root {
   --lf-bg: #f7f8f5;
-  --lf-surface: #ffffff;
+  --lf-surface: #f7faf8;
   --lf-ink: #10221e;
   --lf-muted: #3f5650;
   --lf-line: #d9e3df;
@@ -473,7 +473,7 @@ main {
 .lf-member-card {
   border: 1px solid var(--lf-line);
   border-radius: 12px;
-  background: #fcfdfc;
+  background: #eaf2ee;
   padding: 0.6rem;
   text-align: center;
   display: flex;
