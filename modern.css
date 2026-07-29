@@ -343,6 +343,53 @@ main {
   gap: 0.75rem;
 }
 
+.lf-publication-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: 'review published';
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.lf-review-column {
+  grid-area: review;
+}
+
+.lf-published-column {
+  grid-area: published;
+}
+
+.lf-column-heading {
+  border-bottom: 1px solid var(--lf-line);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+}
+
+.lf-column-heading h3 {
+  color: #173f35;
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  margin: 0.18rem 0 0;
+}
+
+.lf-column-kicker {
+  color: #678078;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lf-publication-column .lf-pub-item {
+  min-height: 0;
+  padding: 1rem 1.05rem;
+}
+
+.lf-pub-under-review {
+  background: #f5f8f6;
+  border-color: #dce6e2;
+}
+
 .lf-pub-media {
   display: grid;
   grid-template-columns: 112px 1fr;
@@ -365,10 +412,21 @@ main {
 
 .lf-tag {
   display: inline-block;
-  min-width: 110px;
+  margin-bottom: 0.32rem;
+  margin-right: 0.35rem;
   color: var(--lf-primary);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.lf-tag-review {
+  border: 1px solid #c8d6d1;
+  border-radius: 999px;
+  color: #516b63;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  padding: 0.14rem 0.48rem;
+  text-transform: uppercase;
 }
 
 .lf-authors {
@@ -560,6 +618,13 @@ main {
   .lf-grid-3,
   .lf-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .lf-publication-columns {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'published'
+      'review';
   }
 
   .lf-pub-media {
