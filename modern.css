@@ -646,6 +646,7 @@ main {
   padding: 0.8rem 0;
 }
 .lf-current-members .lf-member-card img,
+.lf-alumni .lf-member-placeholder,
 .lf-alumni .lf-member-card img {
   grid-row: 1 / 3;
   width: 64px;
@@ -655,6 +656,7 @@ main {
 }
 .lf-current-members .lf-member-role,
 .lf-alumni .lf-member-role { margin: 0; }
+.lf-alumni .lf-member-placeholder { font-size:1.25rem; }
 .lf-current-members .lf-member-card { grid-template-columns: 80px minmax(0, 1fr); }
 .lf-current-members .lf-member-card img { width: 80px; height: 80px; }
 
