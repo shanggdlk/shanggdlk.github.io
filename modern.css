@@ -252,6 +252,37 @@ main {
   font-weight: 700;
 }
 
+.lf-news-archive summary {
+  color: var(--lf-primary);
+  cursor: pointer;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.lf-news-archive[open] summary { margin-bottom: 0.8rem; }
+
+.lf-honors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lf-honors li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--lf-line);
+}
+
+.lf-honors strong { font-size: 0.95rem; font-weight: 600; }
+.lf-honors span { color: var(--lf-muted); font-size: 0.85rem; }
+
 .lf-grid {
   display: grid;
   gap: 0.9rem;
@@ -345,9 +376,9 @@ main {
 
 .lf-publication-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-areas: 'review published';
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'published' 'review';
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -382,8 +413,18 @@ main {
 
 .lf-publication-column .lf-pub-item {
   min-height: 0;
-  padding: 1rem 1.05rem;
+  padding: 0.85rem 0 1rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--lf-line);
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
 }
+
+.lf-publication-column .lf-pub-item > p:first-child { font-weight: 600; }
+.lf-publication-column .lf-tag { display: block; }
+.lf-publication-column .lf-tag-review { width: fit-content; }
 
 .lf-pub-under-review {
   background: #f5f8f6;
@@ -527,10 +568,14 @@ main {
   margin-top: 1rem;
 }
 
+.lf-group-sections {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .lf-member-grid {
   margin-top: 0.7rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.8rem;
 }
 
@@ -545,12 +590,27 @@ main {
   min-height: 228px;
 }
 
-.lf-member-card img {
+.lf-member-card img,
+.lf-member-placeholder {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 0.45rem;
+}
+
+.lf-member-placeholder {
+  display: grid;
+  place-items: center;
+  background: #dbe8e1;
+  color: #5c746d;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.lf-member-year {
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 .lf-member-name {
@@ -565,10 +625,74 @@ main {
   font-size: 0.82rem;
   color: #5c746d;
   line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+}
+
+.lf-current-members .lf-member-grid,
+.lf-alumni .lf-member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.lf-current-members .lf-member-card,
+.lf-alumni .lf-member-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 0.2rem 0.9rem;
+  align-items: start;
+  min-height: 0;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--lf-line);
+  padding: 0.8rem 0;
+}
+.lf-current-members .lf-member-card img,
+.lf-alumni .lf-member-card img {
+  grid-row: 1 / 3;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0;
+}
+.lf-current-members .lf-member-role,
+.lf-alumni .lf-member-role { margin: 0; }
+.lf-current-members .lf-member-card { grid-template-columns: 80px minmax(0, 1fr); }
+.lf-current-members .lf-member-card img { width: 80px; height: 80px; }
+
+/* Per-person display crops keep the original photo files intact. */
+.lf-avatar {
+  grid-row: 1 / 3;
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
   overflow: hidden;
+  border-radius: 50%;
+}
+.lf-current-members .lf-avatar img {
+  position: absolute;
+  width: var(--portrait-width);
+  max-width: none;
+  height: auto;
+  aspect-ratio: auto;
+  left: var(--portrait-left);
+  top: var(--portrait-top);
+  border-radius: 0;
+}
+.lf-avatar-tianyu { --portrait-width: 357%; --portrait-left: -129%; --portrait-top: -153%; }
+.lf-avatar-vaibhav { --portrait-width: 294%; --portrait-left: -91%; --portrait-top: -22%; }
+.lf-avatar-junbo { --portrait-width: 256%; --portrait-left: -114%; --portrait-top: -165%; }
+.lf-avatar-hongbo { --portrait-width: 256%; --portrait-left: -41%; --portrait-top: -62%; }
+.lf-avatar-daiyang { --portrait-width: 278%; --portrait-left: -83%; --portrait-top: -7%; }
+.lf-service-list { list-style: none; padding: 0; margin: 0.7rem 0 0; color: var(--lf-muted); }
+.lf-service-list li { margin-bottom: 0.45rem; }
+.lf-service-grid .lf-panel {
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--lf-line);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1rem 0;
+  transform: none;
 }
 
 .lf-theme,
@@ -650,9 +774,16 @@ main {
   .lf-member-card {
     min-height: 0;
   }
+
+  .lf-member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 575px) {
+  .lf-honors,
+  .lf-current-members .lf-member-grid,
+  .lf-alumni .lf-member-grid { grid-template-columns: 1fr; }
   .lf-grid-4 {
     grid-template-columns: 1fr;
   }
