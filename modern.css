@@ -104,7 +104,7 @@ main {
 }
 
 .lf-hero {
-  padding: 5.5rem 0 3.5rem;
+  padding: 5.5rem 0 1.2rem;
 }
 
 .lf-kicker {
@@ -229,7 +229,7 @@ main {
 }
 
 .lf-section {
-  padding: clamp(2.5rem, 5vw, 3.35rem) 0;
+  padding: clamp(0.9rem, 1.8vw, 1.2rem) 0;
 }
 
 .lf-section-title {
@@ -607,6 +607,72 @@ main {
   font-size: 2.5rem;
   font-weight: 700;
 }
+
+.lf-market-banner { margin-top: 8px; margin-bottom: 8px; }
+.lf-market-banner-inner {
+  padding: 22px 26px;
+  border: 1px solid #e8ddbe;
+  border-left: 4px solid #af862e;
+  border-radius: 10px;
+  background: #fcf7e9;
+  color: #263e50;
+}
+.lf-market-banner h2 {
+  margin: 0 0 8px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.lf-market-banner p { margin: 0; font-size: 0.94rem; line-height: 1.65; }
+.lf-market-banner a { color: #244c66; font-weight: 700; text-decoration: underline; text-decoration-color: #b6a579; text-underline-offset: 3px; }
+.lf-market-banner a:hover { color: #805d16; }
+.lf-market-banner a:focus-visible { outline: 2px solid #805d16; outline-offset: 3px; }
+.lf-market-banner .lf-market-banner-hint { margin-top: 8px; font-size: 0.78rem; color: #6c654f; }
+@media (max-width: 575px) {
+  .lf-market-banner-inner { padding: 18px; }
+}
+
+.lf-market-tag {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 0.35rem;
+  padding: 3px 9px;
+  border: 1px solid #cbddec;
+  border-radius: 20px;
+  background: #edf5fb;
+  color: #245477;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lf-market-tag:hover, .lf-market-tag[aria-expanded="true"] { background: #dcecf8; }
+.lf-market-tag:focus-visible { outline: 2px solid #245477; outline-offset: 3px; }
+.lf-market-popover {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  width: 360px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 22px;
+  border: 1px solid #d7e2eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #334155;
+  box-shadow: 0 12px 40px rgba(25, 49, 73, 0.16);
+  text-align: left;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.lf-market-popover h4 { font-size: 1.08rem; font-weight: 700; margin: 0 0 8px; color: #193b56; }
+.lf-market-popover h5 { font-size: 0.84rem; font-weight: 700; margin: 16px 0 5px; color: #193b56; }
+.lf-market-popover p { margin: 0; }
+.lf-market-popover .lf-market-intro { color: #245477; background: #edf5fb; padding: 9px 11px; border-radius: 6px; }
+.lf-market-popover ul { padding-left: 18px; margin: 0; }
 
 .lf-member-year {
   font-weight: 400;
